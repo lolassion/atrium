@@ -49,21 +49,8 @@
       </div>
 
       <div class="stage" id="stage" aria-hidden="true">
-        <div class="laptop">
-          <div class="lid">
-            <div class="bezel">
-              <div class="screen">
-                <img src="assets/hero.jpg" alt="">
-                <span class="wc"><i class="min"></i><i class="max"></i><i class="close"></i></span>
-              </div>
-              <span class="cam"></span>
-            </div>
-          </div>
-          <div class="deck">
-            <div class="keys" id="keys"></div>
-            <div class="pad"></div>
-          </div>
-        </div>
+        <canvas id="laptop3d"></canvas>
+        <img class="stage-fallback" src="assets/hero.jpg" alt="">
       </div>
     </section>
 
@@ -342,5 +329,12 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+  <script type="module" src="laptop.js"></script>
 </body>
 </html>
