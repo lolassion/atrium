@@ -56,20 +56,8 @@ const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   }
 })();
 
-/* ---------- laptop keyboard ---------- */
-(() => {
-  const keys = document.getElementById('keys');
-  const frag = document.createDocumentFragment();
-  for (let i = 0; i < 14 * 5; i++) frag.append(document.createElement('span'));
-  [['', 3], ['w2', 1], ['space', 1], ['', 3]].forEach(([cls, n]) => {
-    for (let i = 0; i < n; i++) { const s = document.createElement('span'); if (cls) s.className = cls; frag.append(s); }
-  });
-  keys.append(frag);
-})();
-
-/* ---------- scroll-driven pieces ---------- */
+/* ---------- scroll-driven pieces (the 3D laptop lives in laptop.js) ---------- */
 const nav = document.getElementById('nav');
-const stage = document.getElementById('stage');
 const story = document.getElementById('features');
 const items = [...story.querySelectorAll('.item')];
 const shots = [...story.querySelectorAll('.window img')];
@@ -91,10 +79,6 @@ function setStory(i) {
 function onScroll() {
   const y = scrollY, vh = innerHeight;
   nav.classList.toggle('scrolled', y > 30);
-
-  // The lid swings upright over the first ~60% of a screen of scrolling.
-  const p = reduced ? 1 : clamp(y / (vh * 0.6), 0, 1);
-  stage.style.setProperty('--p', (1 - Math.pow(1 - p, 2.2)).toFixed(4));
 
   const top = story.offsetTop, span = story.offsetHeight - vh;
   const sp = clamp((y - top) / span, 0, 0.9999);
