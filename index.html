@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atrium — Every game, one library</title>
+  <meta name="description" content="Atrium gathers every game from Steam, Epic, GOG and Ubisoft into one quiet library. Steam first, always.">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="dots" aria-hidden="true"></canvas>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top"><img src="assets/icon.png" alt=""><span>Atrium</span></a>
+      <nav class="links">
+        <a href="#top" class="active">Home</a>
+        <a href="#features">Features</a>
+        <a href="#launchers">Launchers</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#download">Download</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1 class="reveal">The last <span class="accent">launcher</span> you'll<br>ever open</h1>
+        <p class="reveal">Atrium gathers every game from Steam, Epic, GOG and Ubisoft into one quiet,
+          glass-smooth library. Steam comes first, always.</p>
+        <div class="ctas reveal">
+          <a class="btn primary" href="https://github.com/lolassion/atrium/releases/latest/download/Atrium-Setup.exe" download>
+            <svg viewBox="0 0 20 20" class="fill"><path d="M2 4.1l6.5-.9v6.3H2zM9.3 3.1L18 2v7.5H9.3zM2 10.4h6.5v6.3L2 15.8zM9.3 10.4H18V18l-8.7-1.2z"/></svg>
+            Download for Windows
+            <svg viewBox="0 0 20 20"><path d="M10 3.5v9M6.2 9l3.8 3.8L13.8 9M4 16.2h12"/></svg>
+          </a>
+          <a class="btn ghost" href="#features">
+            <svg viewBox="0 0 20 20" class="fill"><path d="M6.5 4.6v10.8a.6.6 0 0 0 .9.5l8.6-5.4a.6.6 0 0 0 0-1L7.4 4.1a.6.6 0 0 0-.9.5z"/></svg>
+            See how it works
+          </a>
+        </div>
+      </div>
+
+      <div class="stage" id="stage" aria-hidden="true">
+        <div class="laptop">
+          <div class="lid">
+            <div class="bezel">
+              <div class="screen">
+                <img src="assets/hero.jpg" alt="">
+                <span class="wc"><i class="min"></i><i class="max"></i><i class="close"></i></span>
+              </div>
+              <span class="cam"></span>
+            </div>
+          </div>
+          <div class="deck">
+            <div class="keys" id="keys"></div>
+            <div class="pad"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY (sticky) ============ -->
+    <section class="story" id="features" style="--n:4">
+      <div class="story-sticky">
+        <div class="story-left">
+          <h2 class="story-title">Every game, <em>one</em> <span class="accent">shelf</span></h2>
+          <div class="rule"></div>
+          <div class="story-items">
+            <article class="item">
+              <h3>Steam comes <span class="accent">first</span></h3>
+              <p>Atrium reads every <u>Steam library folder</u> straight from your drive, with your main
+                Steam folder always leading. No logins, no API keys, no waiting.</p>
+              <ul>
+                <li>Every library folder, on every drive</li>
+                <li>Playtime and last played from your own Steam account</li>
+                <li>Covers, banners and logos from Steam's local cache</li>
+              </ul>
+            </article>
+            <article class="item">
+              <h3>A shelf, not a <span class="accent">spreadsheet</span></h3>
+              <p>Real cover art in a calm grid, grouped by launcher. Pick a game and its artwork
+                quietly fills the whole window.</p>
+              <ul>
+                <li>Clean title cards when a game has no cover</li>
+                <li>Downloads and queued updates marked on the cover</li>
+                <li>Double-click anything to play</li>
+              </ul>
+            </article>
+            <article class="item">
+              <h3>Sorted the way <span class="accent">you think</span></h3>
+              <p>Recent, A–Z or Size. Steam stays on top in every order, so your main library is never
+                buried under a stray launcher.</p>
+              <ul>
+                <li>Recently played rises to the top on its own</li>
+                <li>Find the space hogs with one click</li>
+                <li>"The" and "A" are ignored when sorting by name</li>
+              </ul>
+            </article>
+            <article class="item">
+              <h3>Found in a <span class="accent">keystroke</span></h3>
+              <p>Start typing anywhere and the library narrows as you go. Press Enter to launch the
+                first match, without ever touching the mouse.</p>
+              <ul>
+                <li>Ctrl K focuses search from anywhere</li>
+                <li>The hero follows your best match</li>
+                <li>Esc clears it and steps back</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="story-right">
+          <div class="window">
+            <img src="assets/hero.jpg" alt="Atrium showing Trailmakers with its artwork filling the window">
+            <img src="assets/grid.jpg" alt="Atrium's cover grid grouped under Steam">
+            <img src="assets/size.jpg" alt="Atrium sorted by size">
+            <img src="assets/search.jpg" alt="Atrium narrowing the library while searching">
+            <span class="wc"><i class="min"></i><i class="max"></i><i class="close"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENTO ============ -->
+    <section class="section" id="launchers">
+      <div class="wrap">
+        <h2 class="big reveal">Launchers</h2>
+        <p class="lead reveal">Bring your whole collection under one roof, so you can focus on playing.</p>
+
+        <div class="bento">
+          <article class="card wide reveal">
+            <div class="ambient"><img src="assets/grid.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3><span class="accent">Steam</span> Library</h3>
+              <p>Reads <u>every library folder</u> on every drive and launches through Steam, exactly as Steam expects.</p>
+            </div>
+            <div class="card-visual shot-window">
+              <img src="assets/grid.jpg" alt="">
+              <span class="wc"><i class="min"></i><i class="max"></i><i class="close"></i></span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="ambient"><img src="assets/search.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3><span class="accent">Epic</span> &amp; GOG</h3>
+              <p>Picked up the moment they're installed. Each one gets <u>its own tab</u>.</p>
+            </div>
+            <div class="card-visual tabs-demo">
+              <div class="seg glass">
+                <span class="on">All <b>31</b></span><span>Steam <b>22</b></span><span>Epic <b>6</b></span><span>GOG <b>3</b></span>
+              </div>
+              <div class="seg glass faint">
+                <span>Ubisoft <b>2</b></span><span>Other <b>4</b></span><span>Hidden <b>1</b></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="ambient"><img src="assets/hero.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3><span class="accent">Ubisoft</span> Connect</h3>
+              <p>Found in the registry and launched through <u>Ubisoft Connect</u>, nothing to set up.</p>
+            </div>
+            <div class="card-visual play-demo">
+              <div class="meta"><span>Ubisoft Connect</span><span>48.2 GB</span></div>
+              <div class="row">
+                <span class="play"><svg viewBox="0 0 20 20" class="fill"><path d="M6.5 4.6v10.8a.6.6 0 0 0 .9.5l8.6-5.4a.6.6 0 0 0 0-1L7.4 4.1a.6.6 0 0 0-.9.5z"/></svg>Play</span>
+                <span class="round glass"><svg viewBox="0 0 20 20"><path d="M3 6.2c0-.9.7-1.7 1.7-1.7h3.1l1.7 1.8h5.8c.9 0 1.7.7 1.7 1.7v6.3c0 .9-.7 1.7-1.7 1.7H4.7c-.9 0-1.7-.7-1.7-1.7z"/></svg></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card wide reveal">
+            <div class="ambient"><img src="assets/size.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3>Your <span class="accent">own</span> games</h3>
+              <p>Emulators, itch.io downloads, old favourites. Point Atrium at <u>any .exe</u> and it joins the shelf.</p>
+            </div>
+            <div class="card-visual add-demo">
+              <div class="picker glass">
+                <div class="picker-head">Add a game</div>
+                <div class="file"><i></i>Dolphin.exe</div>
+                <div class="file sel"><i></i>Celeste.exe</div>
+                <div class="file"><i></i>OpenTTD.exe</div>
+                <div class="picker-foot"><span class="mini-btn">Cancel</span><span class="mini-btn solid">Open</span></div>
+              </div>
+              <div class="ph-tile">
+                <span class="ph-icon"></span>
+                <div><b>Celeste</b><small>Added by you</small></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KEYBOARD ============ -->
+    <section class="section">
+      <div class="wrap split">
+        <div class="split-copy">
+          <h2 class="reveal">Built for the <span class="accent">keyboard</span></h2>
+          <p class="reveal">Atrium never makes you hunt for a button. Everything you do every day is one key away,
+            and the mouse is there when you want it.</p>
+          <div class="rule reveal"></div>
+          <ol class="steps reveal" id="steps">
+            <li class="on" data-keys="ctrl,k"><b>Search</b><span>Press Ctrl K, or just start typing.</span></li>
+            <li data-keys="left,right,up,down"><b>Browse</b><span>Arrow keys move across the shelf.</span></li>
+            <li data-keys="enter"><b>Play</b><span>Enter launches the game you've picked.</span></li>
+            <li data-keys="esc"><b>Step back</b><span>Esc clears the search.</span></li>
+          </ol>
+        </div>
+        <div class="keyboard reveal" aria-hidden="true">
+          <div class="krow"><span class="key w2" data-k="esc">Esc</span><span class="key w3" data-k="ctrl">Ctrl</span><span class="key" data-k="k">K</span></div>
+          <div class="krow arrows">
+            <span class="key gap"></span><span class="key" data-k="up">↑</span><span class="key gap"></span>
+          </div>
+          <div class="krow arrows">
+            <span class="key" data-k="left">←</span><span class="key" data-k="down">↓</span><span class="key" data-k="right">→</span>
+          </div>
+          <div class="krow"><span class="key w5" data-k="enter">Enter</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THREE CARDS ============ -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="center reveal">Take your library <span class="accent">even further.</span></h2>
+        <p class="center sub reveal">Small touches that keep a big collection feeling small.</p>
+        <div class="trio">
+          <article class="tcard reveal">
+            <div class="tvis">
+              <div class="ctx glass">
+                <span>Play</span><hr>
+                <span>Open install folder</span><span>Open in Steam</span><span>Store page</span><hr>
+                <span class="hl">Hide from library</span>
+              </div>
+            </div>
+            <h3>Right-click anything</h3>
+            <p>Open a game's <u>install folder</u>, its Steam page or its store page straight from the cover.</p>
+          </article>
+          <article class="tcard reveal">
+            <div class="tvis">
+              <div class="seg glass">
+                <span>All <b>21</b></span><span>Steam <b>21</b></span><span class="on">Hidden <b>1</b></span>
+              </div>
+              <div class="ghost-tile"><span>SteamVR</span></div>
+            </div>
+            <h3>Hide the clutter</h3>
+            <p>Tools and test builds go into <u>Hidden</u>, out of sight but one click away.</p>
+          </article>
+          <article class="tcard reveal">
+            <div class="tvis">
+              <span class="round glass big spin"><svg viewBox="0 0 20 20"><path d="M15.5 7.5A6 6 0 1 0 16 11"/><path d="M16 3.8v3.9h-3.9"/></svg></span>
+              <div class="toast glass">Library rescanned <b>22 games</b></div>
+            </div>
+            <h3>Always current</h3>
+            <p>Atrium <u>rescans quietly</u> each time you come back to it, so new installs simply appear.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2 class="center reveal">Frequently asked questions</h2>
+        <p class="center sub reveal">A few things you might be wondering before you get started.</p>
+      </div>
+      <div class="marquee reveal">
+        <div class="track">
+          <div class="q"><h4>Is Atrium free?</h4><p>Yes. No account, no subscription and nothing to sign into.</p></div>
+          <div class="q"><h4>Does it replace Steam?</h4><p>No. Atrium launches games <u>through their own launchers</u>, so achievements, cloud saves and friends all keep working.</p></div>
+          <div class="q"><h4>Why does Windows warn me?</h4><p>The app isn't code-signed yet. Choose <u>More info → Run anyway</u> once and it won't ask again.</p></div>
+          <div class="q"><h4>Does it need the internet?</h4><p>No. Artwork comes from your launchers' local caches, and the web is only a fallback.</p></div>
+        </div>
+      </div>
+      <div class="marquee reverse reveal">
+        <div class="track">
+          <div class="q"><h4>Which launchers work?</h4><p><u>Steam</u>, <u>Epic Games</u>, <u>GOG</u> and <u>Ubisoft Connect</u>, plus any .exe you add.</p></div>
+          <div class="q"><h4>Where are my settings?</h4><p>In one small file at <u>%APPDATA%\Atrium</u>. Delete it to start fresh.</p></div>
+          <div class="q"><h4>Portable or installer?</h4><p>Either. The <u>portable .exe</u> runs from anywhere, and the installer adds Start Menu shortcuts.</p></div>
+          <div class="q"><h4>Can I hide games?</h4><p>Right-click a cover and choose <u>Hide from library</u>. The Hidden tab brings it back.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="download">
+      <div class="cta-bg"><img src="assets/hero.jpg" alt=""></div>
+      <div class="cta-copy">
+        <h2 class="reveal">What are you waiting for?<br><span class="accent">Download now.</span></h2>
+        <p class="reveal">Get every game you own into one quiet library in under a minute.</p>
+        <div class="ctas reveal">
+          <a class="btn primary" href="https://github.com/lolassion/atrium/releases/latest/download/Atrium-Setup.exe" download>
+            <svg viewBox="0 0 20 20" class="fill"><path d="M2 4.1l6.5-.9v6.3H2zM9.3 3.1L18 2v7.5H9.3zM2 10.4h6.5v6.3L2 15.8zM9.3 10.4H18V18l-8.7-1.2z"/></svg>
+            Download for Windows
+            <svg viewBox="0 0 20 20"><path d="M10 3.5v9M6.2 9l3.8 3.8L13.8 9M4 16.2h12"/></svg>
+          </a>
+          <a class="btn ghost" href="https://github.com/lolassion/atrium/releases/latest/download/Atrium-Portable.exe" download>
+            <svg viewBox="0 0 20 20"><rect x="5" y="2.5" width="10" height="15" rx="2"/><path d="M8.5 14.5h3"/></svg>
+            Portable version
+          </a>
+        </div>
+        <small class="reveal">Free · Windows 10 and 11 · Installer or portable</small>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap foot">
+      <div class="foot-brand">
+        <img src="assets/icon.png" alt="">
+        <div>
+          <strong>Atrium</strong>
+          <span>Every game, one library.</span>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h5>Explore</h5>
+          <a href="#top">Home</a><a href="#features">Features</a><a href="#launchers">Launchers</a><a href="#faq">FAQ</a>
+        </div>
+        <div>
+          <h5>Download</h5>
+          <a href="https://github.com/lolassion/atrium/releases/latest/download/Atrium-Setup.exe" download>Installer <i>↗</i></a>
+          <a href="https://github.com/lolassion/atrium/releases/latest/download/Atrium-Portable.exe" download>Portable <i>↗</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap foot-bottom"><span>© 2026 Atrium</span><span>Not affiliated with Valve, Epic Games, CD PROJEKT or Ubisoft.</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
