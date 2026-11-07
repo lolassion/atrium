@@ -58,10 +58,11 @@ const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
 /* ---------- scroll-driven pieces (the 3D laptop lives in laptop.js) ---------- */
 const nav = document.getElementById('nav');
-const story = document.getElementById('features');
-const items = [...story.querySelectorAll('.item')];
-const shots = [...story.querySelectorAll('.window img')];
-const pips = [...story.querySelectorAll('.story-dots i')];
+const story = document.querySelector('.story');          // only on the launcher page
+const items = story ? [...story.querySelectorAll('.item')] : [];
+const shots = story ? [...story.querySelectorAll('.window img')] : [];
+const pips = story ? [...story.querySelectorAll('.story-dots i')] : [];
+const sectionIds = [...document.querySelectorAll('.links a')].map((a) => a.getAttribute('href')).filter((h) => h && h.startsWith('#') && h !== '#top').map((h) => h.slice(1));
 let storyIndex = -1;
 
 function setStory(i) {
@@ -80,14 +81,16 @@ function onScroll() {
   const y = scrollY, vh = innerHeight;
   nav.classList.toggle('scrolled', y > 30);
 
-  const top = story.offsetTop, span = story.offsetHeight - vh;
-  const sp = clamp((y - top) / span, 0, 0.9999);
-  setStory(Math.floor(sp * items.length));
+  if (story) {
+    const top = story.offsetTop, span = story.offsetHeight - vh;
+    const sp = clamp((y - top) / span, 0, 0.9999);
+    setStory(Math.floor(sp * items.length));
+  }
 
   // Highlight the nav link for the section in view.
   const mid = y + vh * 0.4;
   let current = 'top';
-  for (const id of ['features', 'launchers', 'faq']) {
+  for (const id of sectionIds) {
     const el = document.getElementById(id);
     if (el && el.offsetTop <= mid) current = id;
   }
@@ -107,6 +110,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 /* ---------- keyboard demo ---------- */
 (() => {
   const steps = [...document.querySelectorAll('#steps li')];
+  if (!steps.length) return;
   const keyEls = Object.fromEntries([...document.querySelectorAll('.key[data-k]')].map((k) => [k.dataset.k, k]));
   let i = 0, timer, pressTimer;
 
