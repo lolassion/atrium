@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atrium Browser — The web, without the noise</title>
+  <meta name="description" content="A fast, private browser in the Atrium style. Blocks ads and trackers, upgrades every connection to HTTPS, and hides cookie banners. Built on Chromium.">
+  <link rel="icon" href="assets/browser-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="browser.css">
+</head>
+<body>
+  <canvas id="dots" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top"><img src="assets/browser-icon.png" alt=""><span>Atrium Browser</span></a>
+      <nav class="links">
+        <a href="index.html">Launcher</a>
+        <a href="#top" class="active">Browser</a>
+        <a href="#shields">Shields</a>
+        <a href="#security">Security</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#download">Download</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1 class="reveal">The web, without<br>the <span class="accent">noise</span></h1>
+        <p class="reveal">Atrium Browser blocks ads and trackers, upgrades every connection to HTTPS and clears away
+          cookie banners, in the same quiet glass as the Atrium launcher.</p>
+        <div class="ctas reveal">
+          <a class="btn primary" href="https://github.com/lolassion/atrium-browser/releases/latest/download/AtriumBrowser-Setup.exe" download>
+            <svg viewBox="0 0 20 20" class="fill"><path d="M2 4.1l6.5-.9v6.3H2zM9.3 3.1L18 2v7.5H9.3zM2 10.4h6.5v6.3L2 15.8zM9.3 10.4H18V18l-8.7-1.2z"/></svg>
+            Download for Windows
+            <svg viewBox="0 0 20 20"><path d="M10 3.5v9M6.2 9l3.8 3.8L13.8 9M4 16.2h12"/></svg>
+          </a>
+          <a class="btn ghost" href="#shields">
+            <svg viewBox="0 0 20 20"><path d="M10 2.8l5.8 2.2v4.3c0 3.7-2.5 6.6-5.8 7.9-3.3-1.3-5.8-4.2-5.8-7.9V5z"/></svg>
+            How Shields work
+          </a>
+        </div>
+        <small class="hero-note reveal">Free · Windows 10 and 11 · Built on Chromium</small>
+      </div>
+
+      <div class="tilt-stage" id="tiltStage">
+        <div class="tilt window big-window">
+          <img src="assets/browser-newtab.jpg" alt="Atrium Browser's new tab page with search and Shields statistics">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHIELDS BENTO ============ -->
+    <section class="section" id="shields">
+      <div class="wrap">
+        <h2 class="big reveal">Shields</h2>
+        <p class="lead reveal">Protection is on before the first page loads. No extensions, no setup.</p>
+
+        <div class="bento">
+          <article class="card wide reveal">
+            <div class="ambient"><img src="assets/browser-newtab.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3>Ads &amp; <span class="accent">trackers</span></h3>
+              <p>Blocked with <u>EasyList</u>, <u>EasyPrivacy</u> and Ghostery’s tracker lists, refreshed every few days. One switch turns Shields down for a site that misbehaves.</p>
+            </div>
+            <div class="card-visual shield-demo">
+              <div class="panel">
+                <div class="ph"><span class="ico"><svg viewBox="0 0 20 20"><path d="M10 2.8l5.8 2.2v4.3c0 3.7-2.5 6.6-5.8 7.9-3.3-1.3-5.8-4.2-5.8-7.9V5z"/></svg></span><div><b>theverge.com</b><small>Shields are up</small></div><i class="tog"></i></div>
+                <div class="count"><b data-count="14">0</b><span>ads and trackers blocked on this page</span></div>
+                <div class="fact"><span>Ads and trackers</span><em>Blocked</em></div>
+                <div class="fact"><span>Upgrade to HTTPS</span><em>On</em></div>
+                <div class="fact"><span>Global Privacy Control</span><em>Sent</em></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="ambient"><img src="assets/browser-settings.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3><span class="accent">HTTPS</span> only</h3>
+              <p>Every connection is upgraded. If a site can’t be secured, you’re <u>asked first</u>.</p>
+            </div>
+            <div class="card-visual https-demo">
+              <div class="pill"><svg viewBox="0 0 20 20"><rect x="4.5" y="8.5" width="11" height="8" rx="2"/><path d="M7 8.5V6.5a3 3 0 0 1 6 0v2"/></svg><s>http://</s><b>https://</b>example.com</div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="ambient"><img src="assets/browser-private.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3>No cookie <span class="accent">banners</span></h3>
+              <p>Consent pop-ups and newsletter nags are <u>cleared away</u> before you see them.</p>
+            </div>
+            <div class="card-visual banner-demo">
+              <div class="fake-banner"><i></i><i></i><i class="short"></i><span>Accept all</span></div>
+            </div>
+          </article>
+
+          <article class="card wide reveal">
+            <div class="ambient"><img src="assets/browser-private.jpg" alt=""></div>
+            <div class="card-copy">
+              <h3><span class="accent">Private</span> windows</h3>
+              <p>History isn’t saved, and cookies and site data are <u>erased</u> when you close the window. Shields stay up in there too.</p>
+            </div>
+            <div class="card-visual shot-window">
+              <img src="assets/browser-private.jpg" alt="">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECURITY ============ -->
+    <section class="section" id="security">
+      <div class="wrap split">
+        <div class="split-copy">
+          <h2 class="reveal">Locked down <span class="accent">underneath</span></h2>
+          <p class="reveal">The quiet surface sits on a hardened Chromium core. Every tab is its own sandboxed process,
+            and nothing a website does can reach your files.</p>
+          <div class="rule reveal"></div>
+          <ol class="steps static reveal">
+            <li class="on"><b>Sandboxed tabs</b><span>Each site runs isolated, with no access to your system.</span></li>
+            <li class="on"><b>Permissions ask first</b><span>Camera, microphone, location and notifications. Hidden third-party frames can’t ask at all.</span></li>
+            <li class="on"><b>Looks like plain Chrome</b><span>Sites can’t single you out by your browser, and WebRTC can’t leak your local IP address.</span></li>
+            <li class="on"><b>Tamper-resistant app</b><span>The app checks its own files and refuses to run as a script host.</span></li>
+          </ol>
+        </div>
+        <div class="window reveal settings-shot">
+          <img src="assets/browser-settings.jpg" alt="Atrium Browser settings: search engine and Shields options">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRIO ============ -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="center reveal">Everything you reach for, <span class="accent">nothing you don’t.</span></h2>
+        <p class="center sub reveal">The everyday parts of a browser, kept simple.</p>
+        <div class="trio">
+          <article class="tcard reveal">
+            <div class="tvis">
+              <div class="kbd-row"><span class="kc">Ctrl</span><span class="kc">T</span><span class="kc">L</span><span class="kc">W</span></div>
+            </div>
+            <h3>Familiar shortcuts</h3>
+            <p>Ctrl+T, Ctrl+L, Ctrl+Shift+T, Ctrl+F. Everything your fingers <u>already know</u>.</p>
+          </article>
+          <article class="tcard reveal">
+            <div class="tvis">
+              <div class="seg glass">
+                <span class="on">DuckDuckGo</span><span>Brave</span><span>Startpage</span>
+              </div>
+            </div>
+            <h3>Your search engine</h3>
+            <p>Private by default with DuckDuckGo. Switch to <u>Brave Search, Startpage, Google or Bing</u> any time.</p>
+          </article>
+          <article class="tcard reveal">
+            <div class="tvis">
+              <div class="mini-tabs"><span class="t on"></span><span class="t"></span><span class="t"></span><span class="plus">+</span></div>
+            </div>
+            <h3>Right where you left off</h3>
+            <p>Your tabs come back after a restart. Closed one by mistake? <u>Ctrl+Shift+T</u>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2 class="center reveal">Good to know</h2>
+        <p class="center sub reveal">Straight answers before you switch.</p>
+      </div>
+      <div class="marquee reveal">
+        <div class="track">
+          <div class="q"><h4>Is it free?</h4><p>Yes. No account, no subscription, nothing to sign into.</p></div>
+          <div class="q"><h4>What is it built on?</h4><p>Chromium, the same engine as Chrome, Edge and Brave, so sites work the way you expect.</p></div>
+          <div class="q"><h4>Why does Windows warn me?</h4><p>The app isn’t code-signed yet. Choose <u>More info → Run anyway</u> once.</p></div>
+          <div class="q"><h4>How do updates work?</h4><p>There’s no auto-update yet. New releases bring Chromium’s latest <u>security fixes</u>, so install them when they appear.</p></div>
+        </div>
+      </div>
+      <div class="marquee reverse reveal">
+        <div class="track">
+          <div class="q"><h4>Do Netflix and Spotify work?</h4><p>Not yet. DRM-protected video and music need a component this build doesn’t include.</p></div>
+          <div class="q"><h4>Does it support extensions?</h4><p>Not yet. Shields already cover what most people install an ad blocker for.</p></div>
+          <div class="q"><h4>Where is my data?</h4><p>Only on your PC, in <u>%APPDATA%\Atrium Browser</u>. Nothing is synced or sent anywhere.</p></div>
+          <div class="q"><h4>A site looks broken?</h4><p>Click the shield and turn Shields down for that site. It reloads instantly.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="download">
+      <div class="cta-bg"><img src="assets/browser-newtab.jpg" alt=""></div>
+      <div class="cta-copy">
+        <h2 class="reveal">Quieter, faster, yours.<br><span class="accent">Download now.</span></h2>
+        <p class="reveal">Install in under a minute, and the web starts behaving.</p>
+        <div class="ctas reveal">
+          <a class="btn primary" href="https://github.com/lolassion/atrium-browser/releases/latest/download/AtriumBrowser-Setup.exe" download>
+            <svg viewBox="0 0 20 20" class="fill"><path d="M2 4.1l6.5-.9v6.3H2zM9.3 3.1L18 2v7.5H9.3zM2 10.4h6.5v6.3L2 15.8zM9.3 10.4H18V18l-8.7-1.2z"/></svg>
+            Download for Windows
+            <svg viewBox="0 0 20 20"><path d="M10 3.5v9M6.2 9l3.8 3.8L13.8 9M4 16.2h12"/></svg>
+          </a>
+          <a class="btn ghost" href="https://github.com/lolassion/atrium-browser/releases/latest/download/AtriumBrowser-Portable.exe" download>
+            <svg viewBox="0 0 20 20"><rect x="5" y="2.5" width="10" height="15" rx="2"/><path d="M8.5 14.5h3"/></svg>
+            Portable version
+          </a>
+        </div>
+        <small class="reveal">Free · Windows 10 and 11 · Installer or portable</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <div class="foot-brand">
+        <img src="assets/browser-icon.png" alt="">
+        <div>
+          <strong>Atrium</strong>
+          <span>Browser · The web, without the noise.</span>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h5>Explore</h5>
+          <a href="#top">Browser</a><a href="#shields">Shields</a><a href="#security">Security</a><a href="#faq">FAQ</a>
+        </div>
+        <div>
+          <h5>Download</h5>
+          <a href="https://github.com/lolassion/atrium-browser/releases/latest/download/AtriumBrowser-Setup.exe" download>Installer <i>↗</i></a>
+          <a href="https://github.com/lolassion/atrium-browser/releases/latest/download/AtriumBrowser-Portable.exe" download>Portable <i>↗</i></a>
+        </div>
+        <div>
+          <h5>Atrium</h5>
+          <a href="index.html">Game launcher</a>
+          <a href="https://github.com/lolassion/atrium-browser">GitHub <i>↗</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap foot-bottom"><span>© 2026 Atrium</span><span>Chromium is an open-source project by Google. Atrium Browser is not affiliated with Google or Brave.</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="browser.js"></script>
+</body>
+</html>
